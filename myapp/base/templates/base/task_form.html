@@ -1,0 +1,13 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<h3>task form </h3>
+<a href = "{% url 'tasks' %}">Go back</a>
+    <form method="POST" action=""> <!-- he left action empty -->
+        {%csrf_token%}
+        {{form.as_p}} <!-- django already created model form and form is the name -->
+        <input type = "submit" value = "SUBMIT">
+    </form>
+
+
+{% endblock content %}

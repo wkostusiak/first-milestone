@@ -1,0 +1,13 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+    <title>Title</title>
+    <a href = "{% url 'tasks' %}">Go back</a>
+    <form method="POST" action="">
+        {%csrf_token%}
+        <p>Are you sure you want to  delete it? "{{task}}"</p>
+        {{form.as_p}} <!-- django already created model form and form is the name -->
+        <input type = "submit" value = "DELETE"/>
+    </form>
+
+{% endblock content %}
